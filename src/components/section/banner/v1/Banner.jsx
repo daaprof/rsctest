@@ -22,7 +22,7 @@ const Banner = () => {
                 <span className="count">
                   <Counter end={3000} duration={3000} />
                 </span>{" "}
-                / 3000 Minted
+                / 3001 Minted
               </h3>
               <div className="banner_buttons">
                 <Button lg variant="mint" onClick={() => mintModalHandle()}>
