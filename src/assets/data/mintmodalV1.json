@@ -1,0 +1,8 @@
+{
+    "floorPriceWhitelist": "0.10",
+    "floorPricePresale1": "0.15",
+    "floorPricePresale2": "0.20",
+    "floorPricePublic": "0.25",
+    "totalNfts": "3000",
+    "nftsremaining": "3000"
+}

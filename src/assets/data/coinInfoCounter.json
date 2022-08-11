@@ -1,0 +1,24 @@
+{ 
+    "info": [
+        {
+            "text": "Total Supply [NFTs]",
+            "number": "3000",
+            "unit": ""
+        }, 
+        {
+            "text": "Total Owners",
+            "number": "0",
+            "unit": ""
+        }, 
+        {
+            "text": "Floor Price (ETH)",
+            "number": "0.1",
+            "unit": " ETH"
+        }, 
+        {
+            "text": "Total Raised (ETH)",
+            "number": "0",
+            "unit": " ETH"
+        }
+    ]
+}
