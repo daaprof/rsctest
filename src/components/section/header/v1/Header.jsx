@@ -9,6 +9,7 @@ import logo from "../../../../assets/images/logo.png";
 
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 
+import $ from 'jquery';
 
 const Header = () => {
   const { walletModalHandle } = useModal();
@@ -22,14 +23,24 @@ const Header = () => {
       if (window.pageYOffset > 50) {
         header.classList.add("sticky");
       } else {
-        header.classList.remove("sticky");
+        header.classList.remove("sticky"); 
       }
     });
 
-    return () => {
+    return () => { 
       window.removeEventListener("sticky", handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    if(isMobileMenu){
+      $('.rsc_mobile_menu_content > div:last > div').css('border','2px solid rgba(255,255,255,0.2)')
+    }else{
+      $('.rsc_menu_btns > div > button').css('border','2px solid rgba(255,255,255,0.2)')
+    }
+    
+  }, );
+
   return (
     <NavWrapper className="rsc_header" id="navbar">
       <div className="container">
@@ -72,7 +83,7 @@ const Header = () => {
               </Button>
 
 
-              <ConnectButton accountStatus="address" showBalance="true"/>
+              <ConnectButton height={"50px"} accountStatus="address" showBalance="true" />
 
               {/* <!-- 
               <Button

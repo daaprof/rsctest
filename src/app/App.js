@@ -15,13 +15,13 @@ import {
 } from 'wagmi';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
-import { connectorsForWallets, wallet, darkTheme, lightTheme } from '@rainbow-me/rainbowkit';
+import { connectorsForWallets, wallet, darkTheme, lightTheme, midnightTheme } from '@rainbow-me/rainbowkit';
 
 
 
 var { chains, provider } = configureChains(
   [ chain.mainnet],
-  [
+  [ 
     publicProvider()
   ]
 );
@@ -49,11 +49,17 @@ const wagmiClient = createClient({
   connectors,
   provider
 })
-
+ 
 function App() {
   return (
     <WagmiConfig client={wagmiClient}>
-      <RainbowKitProvider chains={chains} coolMode showRecentTransactions={true} theme={darkTheme()}>
+      <RainbowKitProvider chains={chains} coolMode showRecentTransactions={true} theme={darkTheme({
+          accentColor: 'transparent',
+          accentColorForeground: 'white',
+          borderRadius: 'none',
+          fontStack: 'system',
+          overlayBlur: 'none',
+      })}>
       <Routes>
         <Route path="/" element={<HomeV1 />} exact />
       </Routes>
