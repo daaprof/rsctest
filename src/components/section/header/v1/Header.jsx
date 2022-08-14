@@ -6,6 +6,10 @@ import Button from "../../../../common/button";
 import NavWrapper from "./Header.style";
 import MobileMenu from "../mobileMenu/MobileMenu";
 import logo from "../../../../assets/images/logo.png";
+
+import { ConnectButton } from '@rainbow-me/rainbowkit';
+
+
 const Header = () => {
   const { walletModalHandle } = useModal();
   const [isMobileMenu, setMobileMenu] = useState(false);
@@ -63,9 +67,14 @@ const Header = () => {
               <button className="menu_btn" onClick={() => handleMobileMenu()}>
                 <MdNotes />
               </button>
-              <Button sm variant="outline" className="join_btn" onClick={() => window.open('https://discord.gg/BC3SdW3cfG', 'blank')}>
+              <Button  style={{marginRight: "50px"}} sm variant="outline" className="join_btn" onClick={() => window.open('https://discord.gg/BC3SdW3cfG', 'blank')}>
                 <FaDiscord /> Join
               </Button>
+
+
+              <ConnectButton accountStatus="address" showBalance="true"/>
+
+              {/* <!-- 
               <Button
                 sm
                 variant="hovered"
@@ -74,6 +83,7 @@ const Header = () => {
               >
                 <FaWallet /> Connect
               </Button>
+             --> */}
             </div>
           </div>
         </div>

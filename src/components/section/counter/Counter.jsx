@@ -14,7 +14,7 @@ const CoinInfoCounter = () => {
         <ul>
           {info?.map((item, i) => (
             <li key={i}>
-              <h3>
+              <h3 id={"counter"+i}>
                 <Counter
                   end={item.number}
                   decimal="."

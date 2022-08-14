@@ -8,6 +8,9 @@ import openseaIcon from "../../../../assets/images/icon/opensea.svg";
 
 import MobileMenuStyleWrapper from "./MobileMenu.style";
 
+
+import { ConnectButton } from '@rainbow-me/rainbowkit';
+
 const MobileMenu = ({ mobileMenuhandle }) => {
   const { walletModalHandle } = useModal();
   const [isSubmenu, setSubmenu] = useState(false);
@@ -59,6 +62,13 @@ const MobileMenu = ({ mobileMenuhandle }) => {
             <FaDiscord />
           </a>
         </div>
+
+        <div style={{margin: "10px", display: "flex", justifyContent: "center"}}>
+          <ConnectButton accountStatus="address" showBalance="true"/>
+        </div>
+        
+
+        {/* <!-- 
         <Button
           sm
           variant="hovered"
@@ -67,6 +77,8 @@ const MobileMenu = ({ mobileMenuhandle }) => {
         >
           <FaWallet /> Connect
         </Button>
+  --> */}
+
       </div>
     </MobileMenuStyleWrapper>
   );
