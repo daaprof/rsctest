@@ -6,9 +6,24 @@ import characterThumb from "../../../../assets/images/nft/Character1.png";
 import homeImageBG from "../../../../assets/images/nft/home_img_bg.png";
 import homeInfo from "../../../../assets/data/bannerV1.json";
 
+import {COLLECTION_ADDRESS, COLLECTION_ABI} from '../../../../contracts/Collection';
+import {useAccount, useConnect, useNetwork , useFeeData, useBalance, useContractRead, useContractWrite, useWaitForTransaction, usePrepareContractWrite } from 'wagmi';
+
 const Banner = () => {
   const { mintModalHandle } = useModal();
-  return (
+
+  const totalSupply  = useContractRead({
+    addressOrName: COLLECTION_ADDRESS,
+    contractInterface: COLLECTION_ABI,
+    functionName: 'totalSupply',
+    args: [],
+    onSuccess(data) {
+      //console.log('MintNowModal Success', data)
+    },
+  })
+  let supply = parseInt(totalSupply.data)
+  console.log(supply)
+  return (<>
     <BannerV1Wrapper id="home">
       <div className="container">
         <div className="row">
@@ -17,7 +32,7 @@ const Banner = () => {
               <h2>{homeInfo.title}</h2>
               <h3>
                 <span className="count">
-                  <Counter end={3000} duration={3000} />
+                  <Counter end={supply} duration={10} />
                 </span>{" "}
                 / 3000 Minted
               </h3>
@@ -27,7 +42,7 @@ const Banner = () => {
                   Mint now
                 </Button>
                 <Button lg variant="outline" onClick={() => {}}>
-                  Wishlist now
+                  Whitelist now
                 </Button>
               </div>
               <div className="coin-info">
@@ -53,7 +68,7 @@ const Banner = () => {
         </div>
       </div>
     </BannerV1Wrapper>
-  );
+    </>);
 };
 
 export default Banner;

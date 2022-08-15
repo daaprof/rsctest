@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useModal } from "../../../utils/ModalContext";
 import { FiX } from "react-icons/fi";
 import Button from "../../button";
@@ -7,49 +7,113 @@ import mintImg from "../../../assets/images/icon/mint-img.png";
 import hoverShape from "../../../assets/images/icon/hov_shape_L.svg";
 import mintinfo from "../../../assets/data/mintmodalV1.json"
 
-import {useAccount, useConnect, useNetwork , useFeeData, useBalance, useContractRead, useContractWrite, useWaitForTransaction  } from 'wagmi';
+import {useAccount, useConnect, useNetwork , useFeeData, useBalance, useContractRead, useContractWrite, useWaitForTransaction, usePrepareContractWrite } from 'wagmi';
 import {COLLECTION_ADDRESS, COLLECTION_ABI} from '../../../contracts/Collection';
 import $ from 'jquery';
 import { useAddRecentTransaction } from '@rainbow-me/rainbowkit';
-
-const MintNFTs = () => {
-  const { address, isConnected } = useAccount()
-  const { chain, chains } = useNetwork()
-  const numMint = $('#quantity').val()
+import { ethers } from "ethers";
+var _interval;
+const MintNFTs = (props) => {
+  
+  const numMint = props.amount
+  const address = props.address
   console.log("Minteo de "+numMint+" NFTs con la address "+address)
 
   const addRecentTransaction = useAddRecentTransaction();
 
-  const tx  = useContractWrite({
+  let _value = $('#amountToMint').html() * 1e18
+  console.log(_value)
+  //_value = ethers.utils.parseUnits(_value.toString(), "ether")
+
+  const { config } = usePrepareContractWrite({
     addressOrName: COLLECTION_ADDRESS,
     contractInterface: COLLECTION_ABI,
     functionName: 'mint',
-    args: [numMint],
-    value: '0.1',
+    args: [numMint, {value: _value}],
     onSuccess(data) {
-      console.log('Approve Success', data)
-      addRecentTransaction({
-        hash: data['hash'],
-        description: "Approve Collection",
-      });
+      console.log('Mint Success', data)
+      
     },
   })
-  const waitForApprove  = useWaitForTransaction({
-    hash: tx.data?.hash,
+  const { data, isLoading, isSuccess, write } = useContractWrite(config)
+
+  const waitForTransaction  = useWaitForTransaction({
+    hash: data?.hash,
   })
 
+  
+  console.log("LOADING = "+waitForTransaction.isLoading)
+  console.log("SUCCESS = "+waitForTransaction.isSuccess)
+  
+  if(waitForTransaction.isLoading){
+    addRecentTransaction({
+      hash: data['hash'],
+      description: "Mint NFT",
+    })
+    _interval = setInterval(function(){
+      $('.modal_mint_btn > button').html("Minting")
+      setTimeout(function(){$('.modal_mint_btn > button').html(". Minting .")}, 333)
+      setTimeout(function(){$('.modal_mint_btn > button').html(". . Minting . .")}, 666)
+      setTimeout(function(){$('.modal_mint_btn > button').html(". . . Minting . . .")}, 1000)
+      setTimeout(function(){$('.modal_mint_btn > button').html(". . . . Minting . . . .")}, 1333)
+      setTimeout(function(){$('.modal_mint_btn > button').html(". . . . . Minting . . . . .")}, 1666)
+    }, 2000)
+    return <Button lg variant="mint" >
+            Confirming...
+          </Button>
+  }else{
+    clearInterval(_interval)
+  }
+  
+  
+  if(waitForTransaction.isSuccess){
+    clearInterval(_interval)
+    _interval = setInterval(function(){
+      $('.modal_mint_btn > button').html("Confirmed!")
+      setTimeout(function(){$('.modal_mint_btn > button').html("")}, 750)
+    },1000)
 
-  return (<>
-            <Button lg variant="mint" onClick= {() => address ? tx.write() : alert("In order to mint, you must connect your wallet first.")}>
+    return <Button lg variant="mint" >
+            Confirmed!
+          </Button>
+  }
+  clearInterval(_interval)
+  
+  return (
+            <Button lg variant="mint" disabled={!write} onClick={() => write?.()}>
               Mint Now
             </Button>
-          </>);
+          );
   }
 
 
 const MintNowModal = () => {
   const [count, setCount] = useState(1);
   const { mintModalHandle } = useModal();
+  const { address} = useAccount();
+
+  const totalSupply  = useContractRead({
+    addressOrName: COLLECTION_ADDRESS,
+    contractInterface: COLLECTION_ABI,
+    functionName: 'totalSupply',
+    args: [],
+    onSuccess(data) {
+      //console.log('MintNowModal Success', data)
+    },
+  })
+  const remaining = 3000- parseInt(totalSupply.data); 
+  let currentPrice  = useContractRead({
+    addressOrName: COLLECTION_ADDRESS,
+    contractInterface: COLLECTION_ABI,
+    functionName: 'currentPrice',
+    args: [],
+    onSuccess(data) {
+      console.log('MintNowModal Success', data)
+    },
+  })
+  currentPrice = parseInt(currentPrice.data).toString()
+  currentPrice = ethers.utils.formatEther(currentPrice)
+
   return (
     <>
       <MintModalStyleWrapper className="modal_overlay">
@@ -70,12 +134,12 @@ const MintNowModal = () => {
                   <li>
                     <h5>Remaining</h5>
                     <h5>
-                    <span id="remainingNFTs">{mintinfo.nftsremaining}</span>/<span>{mintinfo.totalNfts}</span>
+                    <span id="remainingNFTs">{remaining}</span>/<span>{mintinfo.totalNfts}</span>
                     </h5>
                   </li>
                   <li>
                     <h5>Price</h5>
-                    <h5 id="currentSalePrice">{mintinfo.floorPriceWhitelist} ETH</h5>
+                    <h5 id="currentSalePrice">{currentPrice} ETH</h5>
                   </li>
                   <li>
                     <h5>Quantity</h5>
@@ -96,13 +160,13 @@ const MintNowModal = () => {
                       <button onClick={() => count < 2 ? setCount(count + 1) : count}>+</button>
                     </div>
                     <h5>
-                      <span id="amountToMint">{count * mintinfo.floorPriceWhitelist}</span> ETH
+                      <span id="amountToMint">{count * currentPrice}</span> ETH
                     </h5>
                   </li>
                 </ul>
               </div>
               <div className="modal_mint_btn">
-                <MintNFTs />
+                <MintNFTs amount={count} address={address}/>
               </div>
             </div>
 

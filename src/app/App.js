@@ -20,7 +20,7 @@ import { connectorsForWallets, wallet, darkTheme, lightTheme, midnightTheme } fr
 
 
 var { chains, provider } = configureChains(
-  [ chain.mainnet],
+  [ chain.rinkeby],
   [ 
     publicProvider()
   ]
@@ -39,7 +39,7 @@ const connectors = connectorsForWallets([
     wallets: [
       wallet.walletConnect({ chains }),
       wallet.trust({chains }),
-      wallet.coinbase({ chains, appName: 'My RainbowKit App' }),
+      wallet.coinbase({ chains, appName: 'Recon Soldier Club' }),
       wallet.ledger({chains, infurId: "url"}),
     ],
   },
@@ -53,13 +53,12 @@ const wagmiClient = createClient({
 function App() {
   return (
     <WagmiConfig client={wagmiClient}>
-      <RainbowKitProvider chains={chains} coolMode showRecentTransactions={true} theme={darkTheme({
-          accentColor: 'transparent',
-          accentColorForeground: 'white',
-          borderRadius: 'none',
-          fontStack: 'system',
-          overlayBlur: 'none',
-      })}>
+      <RainbowKitProvider chains={chains} coolMode showRecentTransactions={true} 
+        theme={darkTheme()} 
+      appInfo={{
+        appName: 'Recon Soldier Club',
+        learnMoreUrl: 'https://metamask.io/',
+      }} >
       <Routes>
         <Route path="/" element={<HomeV1 />} exact />
       </Routes>
