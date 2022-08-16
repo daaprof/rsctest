@@ -146,11 +146,12 @@ const CTAStyleWrapper = styled.section`
       li {
         width: 11%;
         height: 60px;
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(0, 0, 0, 0.7);
         backdrop-filter: blur(10px);
         display: flex;
         align-items: center;
         justify-content: center;
+        border-radius: 50%;
         a {
           color: #ffffff;
           height: 100%;

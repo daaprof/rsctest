@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const TeamMemberStyleWrapper = styled.article`
   .rsc_team_card {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(10px);
     max-width: 100%;
     height: 300px;

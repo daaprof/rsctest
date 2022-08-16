@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import sectionBgImage from "../../../../assets/images/bg/h1_banner_bg.png";
+import sectionBgImage from "../../../../assets/images/bg/about-bg3.png";
 
 const rotate = keyframes`
 from {

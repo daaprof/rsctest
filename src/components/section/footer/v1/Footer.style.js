@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import footerBG from "../../../../assets/images/bg/v1_footer_bg.png";
+import footerBG from "../../../../assets/images/bg/banner-bg4.png";
 
 const FooterStyleWrapper = styled.footer`
   background: url(${footerBG});

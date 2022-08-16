@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import AboutBG from "../../../../assets/images/bg/h1_about_us_bg.png";
+import AboutBG from "../../../../assets/images/bg/about-bg3.png";
 
 const AboutStyleWrapper = styled.section`
   background: url(${AboutBG});
@@ -22,7 +22,7 @@ const AboutStyleWrapper = styled.section`
       font-weight: 500;
       font-size: 16px;
       line-height: 28px;
-      color: rgba(255, 255, 255, 0.8);
+      color: rgba(0, 0, 0, 1);
       padding-bottom: 20px;
     }
   }
@@ -49,7 +49,7 @@ const AboutStyleWrapper = styled.section`
     }
 
     .v1_about_us_img_card1 {
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(0, 0, 0, 0.7);
       backdrop-filter: blur(20px);
       height: 328px;
       width: 270px;
@@ -70,14 +70,14 @@ const AboutStyleWrapper = styled.section`
 
     .v1_about_us_img1_shapes_left {
       .shape_1 {
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(0, 0, 0, 0.7);
         height: 15px;
         width: 115px;
       }
 
       .shape_2 {
         margin-top: 10px;
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(0, 0, 0, 0.7);
         height: 8px;
         width: 75px;
       }
@@ -85,7 +85,7 @@ const AboutStyleWrapper = styled.section`
 
     .v1_about_us_img1_shapes_right {
       .shape_3 {
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(0, 0, 0, 0.7);
         height: 28px;
         width: 28px;
         border-radius: 50%;
@@ -93,7 +93,7 @@ const AboutStyleWrapper = styled.section`
     }
 
     .v1_about_us_img_card2 {
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(0, 0, 0, 0.7);
       backdrop-filter: blur(20px);
       height: 279px;
       width: 230px;
@@ -125,20 +125,20 @@ const AboutStyleWrapper = styled.section`
 
     .v1_about_us_img2_shapes_left {
       .shape_1 {
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(0, 0, 0, 0.7);
         height: 13px;
         width: 98px;
       }
 
       .shape_2 {
         margin-top: 10px;
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(0, 0, 0, 0.7);
         height: 7px;
         width: 64px;
       }
 
       .shape_3 {
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(0, 0, 0, 0.7);
         height: 24px;
         width: 24px;
         border-radius: 50%;
@@ -151,7 +151,7 @@ const AboutStyleWrapper = styled.section`
     margin-top: 120px;
   }
     .about_us_text_card {
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(0, 0, 0, 0.7);
       width: 100%;
       min-height: 220px;
       padding: 35px;
