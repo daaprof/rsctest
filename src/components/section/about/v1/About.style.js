@@ -22,7 +22,7 @@ const AboutStyleWrapper = styled.section`
       font-weight: 500;
       font-size: 16px;
       line-height: 28px;
-      color: rgba(0, 0, 0, 1);
+      color: rgba(0, 0, 0, 0.7);
       padding-bottom: 20px;
     }
   }
@@ -136,7 +136,8 @@ const AboutStyleWrapper = styled.section`
         height: 7px;
         width: 64px;
       }
-
+    }
+    .v1_about_us_img2_shapes_right {
       .shape_3 {
         background: rgba(0, 0, 0, 0.7);
         height: 24px;
@@ -237,6 +238,7 @@ const AboutStyleWrapper = styled.section`
         margin-top: 0;
       }
     }
+    
   }
 
   @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -271,6 +273,8 @@ const AboutStyleWrapper = styled.section`
       .shape_3 {
         height: 23px;
         width: 23px;
+        background: rgba(0, 0, 0, 0.7);
+        border-radius: 50%;
       }
     }
 
@@ -354,6 +358,8 @@ const AboutStyleWrapper = styled.section`
       .shape_3 {
         height: 23px;
         width: 23px;
+        background: rgba(0, 0, 0, 0.7);
+        border-radius: 50%;
       }
     }
 
@@ -368,6 +374,8 @@ const AboutStyleWrapper = styled.section`
       .shape_3 {
         height: 23px;
         width: 23px;
+        background: rgba(0, 0, 0, 0.7);
+        border-radius: 50%;
       }
     }
   }

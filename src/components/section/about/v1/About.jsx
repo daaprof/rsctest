@@ -30,8 +30,8 @@ const About = () => {
                 </div>
                 <div className="v1_about_us_img1_shapes">
                   <div className="v1_about_us_img1_shapes_left">
-                    <div className="shape_1"></div>
-                    <div className="shape_2"></div>
+                    <div className="shape_1" ></div>
+                    <div className="shape_2" ></div>
                   </div>
                   <div className="v1_about_us_img1_shapes_right">
                     <div className="shape_3"></div>
