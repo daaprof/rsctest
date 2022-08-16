@@ -19,7 +19,7 @@ const Banner = () => {
     functionName: 'totalSupply',
     args: [],
   })
-  let supply = parseInt(totalSupply.data)
+  let supply = totalSupply.isSuccess? parseInt(totalSupply.data): 0
 
   const whitelisted  = useContractRead({
     addressOrName: COLLECTION_ADDRESS,
@@ -27,7 +27,7 @@ const Banner = () => {
     functionName: 'whitelisted',
     args: address,
   })
-  let _white = whitelisted.data
+  let _white = whitelisted.isSuccess? whitelisted.data : false
 
   let _text = ""
   if (_white && supply < 300) _text = "You are whitelisted, welcome to RSC!"

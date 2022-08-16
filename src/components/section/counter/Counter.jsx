@@ -37,12 +37,12 @@ const CoinInfoCounter = () => {
     args: [],
   })
 
-  let supply = parseInt(totalSupply.data)
-  let buyers = parseInt(totalBuyers.data)
-  currentPrice = parseInt(currentPrice.data).toString()
-  currentPrice = ethers.utils.formatEther(currentPrice)
-  let raised = parseInt(totalRaised.data).toString()
-  raised = ethers.utils.formatEther(raised)
+  let supply = totalSupply.isSuccess? parseInt(totalSupply.data) : 0
+  let buyers = totalBuyers.isSuccess? parseInt(totalBuyers.data) : 0
+  currentPrice = currentPrice.isSuccess? parseInt(currentPrice.data).toString() : 0
+  currentPrice = currentPrice.isSuccess? ethers.utils.formatEther(currentPrice) : 0
+  let raised = totalRaised.isSuccess? parseInt(totalRaised.data).toString() : 0
+  raised = totalRaised.isSuccess? ethers.utils.formatEther(raised) : 0
 
   const _arr = [supply, buyers, currentPrice, raised]
   console.log("INFO BANNER")

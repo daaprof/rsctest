@@ -59,7 +59,7 @@ const MintNFTs = (props) => {
       setTimeout(function(){$('.modal_mint_btn > button').html(". . . . . Minting . . . . .")}, 1666)
     }, 2000)
     return <Button lg variant="mint" >
-            Confirming...
+            Minting
           </Button>
   }else{
     clearInterval(_interval)
@@ -102,7 +102,7 @@ const MintNowModal = () => {
       //console.log('MintNowModal Success', data)
     },
   })
-  const remaining = 3000 - parseInt(totalSupply.data); 
+  const remaining = totalSupply.isSuccess? 3000 - parseInt(totalSupply.data) : 3000
 
   const currentPrice  = useContractRead({
     addressOrName: COLLECTION_ADDRESS,
@@ -110,8 +110,8 @@ const MintNowModal = () => {
     functionName: 'currentPrice',
     args: [],
   })
-  let price =  parseInt(currentPrice.data).toString()
-  price = price > 0 ? ethers.utils.formatEther(price) : "0.00"
+  let price = currentPrice.isSuccess? parseInt(currentPrice.data).toString() : "0.00"
+  price = currentPrice.isSuccess? ethers.utils.formatEther(price) : "0.00"
 
   return (
     <>
