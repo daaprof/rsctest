@@ -10,9 +10,9 @@ import RoadMapStyleWrapper from "./RoadMap.style";
 const RoadMap = () => {
   const settings = {
     dots: false,
-    arrows: false,
+    arrows: true,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 2500,
     centerMode: true,
     centerPadding: "0px",
     infinite: true,

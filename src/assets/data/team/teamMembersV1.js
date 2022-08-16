@@ -12,7 +12,7 @@ const data = [
   {
     avatar: avatarThumb2,
     name: "Ibay",
-    designation: "Web3 depelopment",
+    designation: "Blockchain Dev",
   },
   {
     avatar: avatarThumb3,
@@ -23,6 +23,46 @@ const data = [
     avatar: avatarThumb4,
     name: "Pablo",
     designation: "Social media specialist",
+  },
+  {
+    avatar: avatarThumb3,
+    name: "Kiter",
+    designation: "Discord and website development",
+  },
+  {
+    avatar: avatarThumb3,
+    name: "Kiter",
+    designation: "Discord and website development",
+  },
+  {
+    avatar: avatarThumb3,
+    name: "Kiter",
+    designation: "Discord and website development",
+  },
+  {
+    avatar: avatarThumb3,
+    name: "Kiter",
+    designation: "Discord and website development",
+  },
+  {
+    avatar: avatarThumb3,
+    name: "Kiter",
+    designation: "Discord and website development",
+  },
+  {
+    avatar: avatarThumb3,
+    name: "Kiter",
+    designation: "Discord and website development",
+  },
+  {
+    avatar: avatarThumb3,
+    name: "Kiter",
+    designation: "Discord and website development",
+  },
+  {
+    avatar: avatarThumb3,
+    name: "Kiter",
+    designation: "Discord and website development",
   }
 ]
 

@@ -6,9 +6,9 @@ import CharacterSliderWrapper from "./CharacterSlider.style";
 const CharacterSlider = () => {
   const settings = {
     dots: false,
-    arrows: false,
+    arrows: true,
     autoplay: true,
-    speed: 2000,
+    speed: 500,
     autoplaySpeed: 2000,
     cssEase: "linear",
     centerMode: true,

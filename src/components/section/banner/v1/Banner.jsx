@@ -11,18 +11,27 @@ import {useAccount, useConnect, useNetwork , useFeeData, useBalance, useContract
 
 const Banner = () => {
   const { mintModalHandle } = useModal();
+  const {address} = useAccount();
 
   const totalSupply  = useContractRead({
     addressOrName: COLLECTION_ADDRESS,
     contractInterface: COLLECTION_ABI,
     functionName: 'totalSupply',
     args: [],
-    onSuccess(data) {
-      //console.log('MintNowModal Success', data)
-    },
   })
   let supply = parseInt(totalSupply.data)
-  console.log(supply)
+
+  const whitelisted  = useContractRead({
+    addressOrName: COLLECTION_ADDRESS,
+    contractInterface: COLLECTION_ABI,
+    functionName: 'whitelisted',
+    args: address,
+  })
+  let _white = whitelisted.data
+
+  let _text = ""
+  if (_white && supply < 300) _text = "You are whitelisted, welcome to RSC!"
+  
   return (<>
     <BannerV1Wrapper id="home">
       <div className="container">
@@ -36,6 +45,7 @@ const Banner = () => {
                 </span>{" "}
                 / 3000 Minted
               </h3>
+              <h5 id="whitelisted" style={{color:"green"}}>{_text}</h5>
               <div className="banner_buttons">
                 <Button lg variant="mint" onClick={() => mintModalHandle()}>
                   {" "}

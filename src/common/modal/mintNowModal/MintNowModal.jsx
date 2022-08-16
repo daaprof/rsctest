@@ -73,10 +73,11 @@ const MintNFTs = (props) => {
       setTimeout(function(){$('.modal_mint_btn > button').html("")}, 750)
     },1000)
 
-    return <Button lg variant="mint" >
+    return <Button lg variant="mint" onClick={() => window.open('https://etherscan.io/tx/'+data?.hash)} target="blank">
             Confirmed!
           </Button>
   }
+  
   clearInterval(_interval)
   
   return (
@@ -101,18 +102,16 @@ const MintNowModal = () => {
       //console.log('MintNowModal Success', data)
     },
   })
-  const remaining = 3000- parseInt(totalSupply.data); 
-  let currentPrice  = useContractRead({
+  const remaining = 3000 - parseInt(totalSupply.data); 
+
+  const currentPrice  = useContractRead({
     addressOrName: COLLECTION_ADDRESS,
     contractInterface: COLLECTION_ABI,
     functionName: 'currentPrice',
     args: [],
-    onSuccess(data) {
-      console.log('MintNowModal Success', data)
-    },
   })
-  currentPrice = parseInt(currentPrice.data).toString()
-  currentPrice = ethers.utils.formatEther(currentPrice)
+  let price =  parseInt(currentPrice.data).toString()
+  price = price > 0 ? ethers.utils.formatEther(price) : "0.00"
 
   return (
     <>
@@ -139,7 +138,7 @@ const MintNowModal = () => {
                   </li>
                   <li>
                     <h5>Price</h5>
-                    <h5 id="currentSalePrice">{currentPrice} ETH</h5>
+                    <h5 id="currentSalePrice">{price} ETH</h5>
                   </li>
                   <li>
                     <h5>Quantity</h5>
@@ -160,7 +159,7 @@ const MintNowModal = () => {
                       <button onClick={() => count < 2 ? setCount(count + 1) : count}>+</button>
                     </div>
                     <h5>
-                      <span id="amountToMint">{count * currentPrice}</span> ETH
+                      <span id="amountToMint">{count * price}</span> ETH
                     </h5>
                   </li>
                 </ul>
