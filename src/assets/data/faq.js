@@ -12,8 +12,8 @@ const data = [
     text: "This project was created for the benefit and enjoyment of the community and has a team that is highly specialized and experienced in the web3 environment.",
   },
   {
-    title: "Where we can buy and sell NFts?",
-    text: "You can mint your own Soldier on this website if you click on the \"MINT NOW\" button. You can trade our Soldiers on OpenSea!",
+    title: "Where we can buy and sell ReconSoldiers?",
+    text: "You can mint your own Soldier on this website by connecting your wallet and clicking on the \"MINT NOW\" button. You can trade our Soldiers on OpenSea!",
   },
   {
     title: "How secure is this token?",
