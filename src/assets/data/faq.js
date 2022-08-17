@@ -8,20 +8,20 @@ const data = [
     text: "1. Click on \"Connect wallet\"\n2. Choose your preferred wallet\n3. Click \"MINT NOW\"\n4. confirm the amount of NFTs you want to mint\n5. Click \"CONFIRM\"\n6. Check your NFT on OpenSea",
   },
   {
-    title: "Why we should choose MiNFT ?",
+    title: "Why we should choose RSC?",
     text: "",
   },
   {
-    title: "Where we can buy and sell NFts ?",
+    title: "Where we can buy and sell NFts?",
+    text: "You can mint your own Soldier on this website if you click on the \"MINT NOW\" button. You can trade our Soldiers on OpenSea!",
+  },
+  {
+    title: "How secure is this token?",
     text: "",
   },
   {
-    title: "How secure is this token ?",
-    text: "",
-  },
-  {
-    title: "What is your contract address ?",
-    text: "",
+    title: "What is your contract address?",
+    text: "Our contract address is 0xa3054b5ae4585eB7Ae1556eFcE478BE6615503E4",
   },
 ]
 
