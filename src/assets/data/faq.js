@@ -1,11 +1,11 @@
 const data = [
   {
-    title: "What is MiNFT ?",
-    text: "",
+    title: "What is ReconSoldiersClub?",
+    text: "We are a team of NFT, crypto and most of all gaming enthousiasts that have chosen to bring you the best utitilies for our Doodle Soldiers collection.",
   },
   {
-    title: "How we can buy and invest NFT ?",
-    text: "",
+    title: "How we can buy an NFT?",
+    text: "1. Click on \"Connect wallet\"\n2. choose your preferred wallet, Click \"MINT NOW\", confirm the amount of NFTs you want to mint, ",
   },
   {
     title: "Why we should choose MiNFT ?",
