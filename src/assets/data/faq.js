@@ -5,7 +5,7 @@ const data = [
   },
   {
     title: "How we can buy an NFT?",
-    text: "1. Click on \"Connect wallet\"\n2. choose your preferred wallet, Click \"MINT NOW\", confirm the amount of NFTs you want to mint, ",
+    text: "1. Click on \"Connect wallet\"\n2. Choose your preferred wallet\n3. Click \"MINT NOW\"\n4. confirm the amount of NFTs you want to mint\n5. Click \"CONFIRM\"\n6. Check your NFT on OpenSea",
   },
   {
     title: "Why we should choose MiNFT ?",
