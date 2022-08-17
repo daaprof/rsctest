@@ -14,12 +14,12 @@ import aboutCardIcon3 from "../../images/icon/aboutus_card_icon3.png"
         {
             icon: aboutCardIcon2,
             title: "Unique utilities",
-            text: 'By owning a Soldier you automatically enter into our monthly giveaway for an all-expenses paid trip for 2 people! We will also be giving away ETH and are actively searching for more special perks to holding a Soldier We will be hosting regular parties across Europe exclusively for holders of Soldiers, to meet our amazing community. '
+            text: 'Owning a Soldier will enable you to automatically get entered into our monthly giveaway for an all-expenses paid trip for 2 people! We will also be giving away ETH, hosting regular parties across Europe exclusively for holders of Soldiers, to meet our amazing community and will accept suggestions for the expansion of our services in the very near future!'
         },
         {
             icon: aboutCardIcon3,
             title: "The future is now",
-            text: 'Even while starting RSC we are already considering new benefits and rewards for RSC V2, which will be released when all Soldiers have been deployed to the blockchain. Stay tuned!'
+            text: 'While we are just getting started with RSC, we are already considering new benefits and rewards for RSC V2, which will be released when all Soldiers have been deployed to the blockchain. Stay tuned for more amazing artwork and utilities to be released!'
         }
     ]
 }
