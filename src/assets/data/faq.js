@@ -9,7 +9,7 @@ const data = [
   },
   {
     title: "Why we should choose RSC?",
-    text: "",
+    text: "This project was created for the benefit and enjoyment of the community and has a team that is highly specialized and experienced in the web3 environment.",
   },
   {
     title: "Where we can buy and sell NFts?",
