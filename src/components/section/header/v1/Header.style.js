@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const NavWrapper = styled.nav`
   z-index: 999;
+  
   &.rsc_header {
     position: absolute;
     top: 0;
@@ -10,6 +11,7 @@ const NavWrapper = styled.nav`
     margin-top: 1px;
     height: 90px;
     transition: all 0.3s;
+    background: rgba(27, 34, 38, 0.8);
 
     &.sticky {
       position: fixed;
@@ -22,6 +24,7 @@ const NavWrapper = styled.nav`
       transition: all 0.2s;
     }
   }
+
 
   .rsc_menu_sect {
     height: 90px;

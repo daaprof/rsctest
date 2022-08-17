@@ -19,7 +19,7 @@ const HomeV1 = () => {
     <Layout>
        <GlobalStyles /> 
       {visibility && <MintNowModal />}
-      {walletModalvisibility && <WalletModal />}
+      
       <Header />
       <Banner />
       <Counter />
