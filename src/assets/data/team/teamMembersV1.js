@@ -13,7 +13,7 @@ const data = [
   },
   {
     avatar: avatarThumb2,
-    name: "Ibay",
+    name: "Volaidlimov",
     designation: "Blockchain Dev",
   },
   {
