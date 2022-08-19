@@ -1,5 +1,4 @@
 import { useModal } from "../utils/ModalContext";
-import { useModal2 } from "../utils/ModalContext";
 import GlobalStyles from "../assets/styles/GlobalStyles";
 import Header from "../components/section/header/v1/Header";
 import Layout from "../common/layout";
