@@ -15,6 +15,7 @@ import toast from "react-hot-toast";
 
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
+import { eventWrapper } from "@testing-library/user-event/dist/utils";
 
 function closeWhitelistModal(){
   $('#whitelistModal').css('visibility','hidden')
@@ -35,7 +36,7 @@ const WhitelistModal = () => {
       console.log(twitter)
       console.log(discord)
       let _req = await axios.post(
-          'http://87.216.85.143:5000/api',
+          'https://babd-87-216-85-143.eu.ngrok.io',
           {
               address: address,
               twitter: twitter,
@@ -50,6 +51,7 @@ const WhitelistModal = () => {
           }
       );
       console.log(_req)
+      toast("Request sent succesfully!")
       console.log("sent axios request")
       //history.push("/");
 
@@ -89,7 +91,8 @@ const transformAddress = async (address) => {
                         type="text"
                         placeholder="0x000000000000000000000000000000000000dEaD"
                         value={ addressShow }
-                        onChange={ (e) => transformAddress(e.target.value) }
+                        onChange={ (e) => transformAddress(e.target.value)}
+                        required
                       />
                     </span>
                     </h5>
@@ -104,6 +107,7 @@ const transformAddress = async (address) => {
                         placeholder="@user1234"
                         value={ twitter }
                         onChange={ (e) => setTwitter(e.target.value) }
+                        required
                       />
                     </span>
                     </h5>
@@ -118,6 +122,7 @@ const transformAddress = async (address) => {
                         placeholder="user#1234"
                         value={ discord }
                         onChange={ (e) => setDiscord(e.target.value) }
+                        required
                       />
                     </span>
                     </h5>
