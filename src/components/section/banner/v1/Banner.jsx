@@ -8,6 +8,12 @@ import homeInfo from "../../../../assets/data/bannerV1.json";
 
 import {COLLECTION_ADDRESS, COLLECTION_ABI} from '../../../../contracts/Collection';
 import {useAccount, useConnect, useNetwork , useFeeData, useBalance, useContractRead, useContractWrite, useWaitForTransaction, usePrepareContractWrite } from 'wagmi';
+import $ from 'jquery';
+
+function openWhitelistModal(){
+  
+  $('#whitelistModal').css('visibility','visible')
+}
 
 const Banner = () => {
   const { mintModalHandle } = useModal();
@@ -51,7 +57,7 @@ const Banner = () => {
                   {" "}
                   Mint now
                 </Button>
-                <Button lg variant="outline" onClick={() => {}}>
+                <Button lg variant="outline" onClick={() => openWhitelistModal()}>
                   Whitelist now
                 </Button>
               </div>

@@ -1,4 +1,5 @@
 import { useModal } from "../utils/ModalContext";
+import { useModal2 } from "../utils/ModalContext";
 import GlobalStyles from "../assets/styles/GlobalStyles";
 import Header from "../components/section/header/v1/Header";
 import Layout from "../common/layout";
@@ -12,13 +13,15 @@ import Team from "../components/section/team/v1";
 import FAQ from "../components/section/faq/v1";
 import Footer from "../components/section/footer/v1";
 import MintNowModal from "../common/modal/mintNowModal";
+import WhitelistModal from "../common/modal/whitelistModal";
 import WalletModal from "../common/modal/walletModal/WalletModal";
 const HomeV1 = () => {
-  const { visibility, walletModalvisibility } = useModal();
+  const { visibility } = useModal();
   return (
     <Layout>
        <GlobalStyles /> 
       {visibility && <MintNowModal />}
+      <WhitelistModal />
       
       <Header />
       <Banner />

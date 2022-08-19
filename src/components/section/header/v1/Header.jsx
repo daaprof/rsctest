@@ -119,7 +119,7 @@ const Header = () => {
         {isMobileMenu && <MobileMenu mobileMenuhandle={handleMobileMenu} />}
       </div>
 
-      <div style={{background: 'rgba(13,27,38,0.7)', width:'100%', display:'flex', justifyContent: 'center', color:'white', fontFamily: "Bakbak One" }} >
+      <div style={{background: 'rgba(13,27,38,0.7)', width:'100%', display:'flex', justifyContent: 'center', color:'white', fontFamily: "Bakbak One" , position:"absolute", top:"100%"}} >
         <div style={{margin:'auto', alignItems:'center', paddingBottom:'5px', paddingTop:'5px' }} >
           <span title="Copy" style={{margin:'0px', padding:'0px', marginRight: '20px', cursor:'pointer', verticalAlign:'middle'}} 
           onClick={function(){

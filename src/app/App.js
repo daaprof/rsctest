@@ -17,7 +17,17 @@ import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
 import { connectorsForWallets, wallet, darkTheme, lightTheme, midnightTheme } from '@rainbow-me/rainbowkit';
 
+import { Toaster } from 'react-hot-toast';
+var toastStlye = {
+  border: '1px solid #0058AA',
+  padding: '16px',
+  color: '#02205D'
+}
 
+var toastIconTheme = {
+  primary: '#009CE9',
+  secondary: '#FFFAEE'
+}
 
 var { chains, provider } = configureChains(
   [ chain.rinkeby],
@@ -59,6 +69,15 @@ function App() {
         appName: 'Recon Soldier Club',
         learnMoreUrl: 'https://metamask.io/',
       }} >
+      <Toaster position="top-center" reverseOrder={false}
+                  containerStyle={{ }}
+                  toastOptions={{
+                    style: toastStlye,
+                    toastIconTheme: toastIconTheme,
+                    success: { duration: 4000 },
+                    error: { duration: 6000 }
+                  }}
+      />
       <Routes>
         <Route path="/" element={<HomeV1 />} exact />
       </Routes>

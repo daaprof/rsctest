@@ -12,6 +12,8 @@ import {COLLECTION_ADDRESS, COLLECTION_ABI} from '../../../contracts/Collection'
 import $ from 'jquery';
 import { useAddRecentTransaction } from '@rainbow-me/rainbowkit';
 import { ethers } from "ethers";
+import toast from "react-hot-toast";
+
 var _interval;
 const MintNFTs = (props) => {
   
@@ -67,6 +69,7 @@ const MintNFTs = (props) => {
   
   
   if(waitForTransaction.isSuccess){
+    toast("Transaction confirmed!")
     clearInterval(_interval)
     _interval = setInterval(function(){
       $('.modal_mint_btn > button').html("Confirmed!")

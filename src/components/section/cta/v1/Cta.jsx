@@ -13,6 +13,7 @@ import particleShape6 from "../../../../assets/images/icon/star_6.svg";
 import particleShape7 from "../../../../assets/images/icon/star_7.svg";
 
 import CTAStyleWrapper from "./Cta.style";
+import toast from "react-hot-toast";
 
 const CTA = () => {
   const particleShapes = [
@@ -34,7 +35,7 @@ const CTA = () => {
         <div className="title-emo">🤙</div>
         <div className="rsc_v1_cta_content">
           <div className="join_comunity_btns">
-            <Button lg variant="mint" className="wishlist_btn">
+            <Button lg variant="mint" className="wishlist_btn" onClick={() => toast("Proof Alert!")}>
               Whitelist Now
             </Button>
             <Button lg variant="blue" className="join_discord_btn" onClick={() => window.open('https://discord.gg/BC3SdW3cfG', 'blank')}>

@@ -29,8 +29,12 @@ const MintModalStyleWrapper = styled.div`
     }
   }
 
+  &.modal_overlay#whitelistModal{
+    visibility: hidden;
+  }
   .mint_modal_box {
     position: relative;
+    top: 6.5em;
     width: 440px;
     margin: auto;
     animation: 1s ${modalAnimation}; /* ********* */
