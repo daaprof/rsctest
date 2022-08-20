@@ -51,7 +51,12 @@ const WhitelistModal = () => {
           }
       );
       console.log(_req)
-      toast("Request sent succesfully!")
+      if(_req.status == 200){
+        toast.success("Request sent succesfully!")
+      }else{
+        toast.error("Request failed!")
+      }
+      
       console.log("sent axios request")
       //history.push("/");
 
@@ -86,7 +91,7 @@ const transformAddress = async (address) => {
                     <h5>Address:</h5>
                     <h5>
                     <span>
-                      <input 
+                      <input style={{fontFamily: "Inter"}}
                         className="input"
                         type="text"
                         placeholder="0x000000000000000000000000000000000000dEaD"
@@ -101,7 +106,7 @@ const transformAddress = async (address) => {
                     <h5>Twitter:</h5>
                     <h5>
                     <span>
-                      <input 
+                      <input style={{fontFamily: "Inter"}} 
                         className="input"
                         type="text"
                         placeholder="@user1234"
@@ -116,7 +121,7 @@ const transformAddress = async (address) => {
                     <h5>Discord:</h5>
                     <h5>
                     <span>
-                      <input 
+                      <input style={{fontFamily: "Inter"}}
                         className="input"
                         type="text"
                         placeholder="user#1234"
