@@ -35,8 +35,9 @@ const WhitelistModal = () => {
       console.log(address)
       console.log(twitter)
       console.log(discord)
-      let _req = await axios.post(
-          'https://ec91-87-216-85-143.eu.ngrok.io',
+      try{
+          let _req = await axios.post(
+          'https://rsc-whitelist-api.herokuapp.com',
           {
               address: address,
               twitter: twitter,
@@ -49,13 +50,17 @@ const WhitelistModal = () => {
                 'Access-Control-Allow-Credentials': 'true'
               }
           }
-      );
-      console.log(_req)
-      if(_req.status == 200){
-        toast.success("Request sent succesfully!")
-      }else{
-        toast.error("Request failed!")
+          );
+          console.log(_req)
+          if(_req.status == 200){
+            toast.success("Request sent succesfully!")
+          }else{
+            toast.error("Request failed.")
+          }
+      }catch{
+        toast.error("Request failed.")
       }
+      
       
       console.log("sent axios request")
       //history.push("/");

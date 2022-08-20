@@ -21,7 +21,8 @@ import { Toaster } from 'react-hot-toast';
 var toastStlye = {
   border: '1px solid #0058AA',
   padding: '16px',
-  color: '#02205D'
+  color: '#02205D',
+  fontFamily: 'Inter'
 }
 
 var toastIconTheme = {
