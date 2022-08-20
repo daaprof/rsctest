@@ -36,7 +36,7 @@ const WhitelistModal = () => {
       console.log(twitter)
       console.log(discord)
       let _req = await axios.post(
-          'https://7c11-87-216-85-143.eu.ngrok.io',
+          'https://ec91-87-216-85-143.eu.ngrok.io',
           {
               address: address,
               twitter: twitter,
