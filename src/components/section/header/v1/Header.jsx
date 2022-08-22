@@ -42,7 +42,7 @@ function copy(){
   setTimeout(function(){
     $('#tick').fadeOut(2900);
   }, 100)
-  toast.success("Copied!")
+  toast.success("Copied!", {duration: 2000})
 }
 
 const Header = () => {
@@ -173,14 +173,14 @@ const Header = () => {
       </div>
 
       <div style={{background: 'rgba(13,27,38,0.7)', width:'100%', display:'flex', justifyContent: 'center', color:'white', fontFamily: "Bakbak One" , position:"absolute", top:"100%"}} >
-        <div style={{margin:'auto', alignItems:'center', paddingBottom:'5px', paddingTop:'5px' }} >
+        <div style={{margin:'auto', alignItems:'center', paddingBottom:'5px', paddingTop:'5px', paddingLeft:'15px' }} >
           <span title="Copy" style={{margin:'0px', padding:'0px', marginRight: '20px', cursor:'pointer', verticalAlign:'middle'}} 
           onClick={function(){
             setIsCopied(true);
             copy();
             setTimeout(function(){
               setIsCopied(false)
-            }, 1000)
+            }, 2000)
             }
           }>
             {t('nav.contractAddress')}: {COLLECTION_ADDRESS}
@@ -193,7 +193,7 @@ const Header = () => {
               copy();
               setTimeout(function(){
                 setIsCopied(false)
-              }, 1000)
+              }, 2000)
               }
             }/>
             :

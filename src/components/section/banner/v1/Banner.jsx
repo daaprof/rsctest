@@ -45,8 +45,8 @@ const Banner = () => {
       <div className="container">
         <div className="row">
           <div className="col-lg-6">
-            <div className="rsc_v1_baner_left">
-              <h2>{homeInfo.title}</h2>
+            <div className="rsc_v1_baner_left" style={{display: "flex-row", alignItems: "center", justifyContent: "center", width:"100%"}}>
+              <h2 style={{paddingRight:"2em", paddingLeft:"2em", marginTop:"-0.9em", border:"2 px solid red"}}><nobr>{homeInfo.title}</nobr></h2>
               <h3>
                 <span className="count">
                   <Counter end={supply} duration={10} />
@@ -55,31 +55,39 @@ const Banner = () => {
               </h3>
               <h5 id="whitelisted" style={{color:"green"}}>{_text}</h5>
               <div className="banner_buttons">
-                <Button lg variant="mint" onClick={() => mintModalHandle()}>
+                <Button lg variant="mint" onClick={() => mintModalHandle()} style={{borderRadius: "15%"}}>
                   {" "}
                   Mint now
                 </Button>
-                <Button lg variant="outline" onClick={() => openWhitelistModal()}>
+                <Button lg variant="outline" onClick={() => openWhitelistModal()} style={{borderRadius: "15%"}}>
                   Whitelist now
                 </Button>
               </div>
-              <div className="coin-info">
+              <div className="coin-info" style={{textAlign:"center"}}>
                 <span>{homeInfo.info[0].desc}</span>
                 <span>{homeInfo.info[1].desc}</span>
                 <span>{homeInfo.info[2].desc}</span>
+                <span>{homeInfo.info[3].desc}</span>
+                <span>{homeInfo.info[4].desc}</span>
+                <span>{homeInfo.info[5].desc}</span>
               </div>
             </div>
           </div>
           <div className="col-lg-6" style={{padding:"0px"}}>
-            <div className="rsc_v1_baner_right">
-              <div className="rsc_v1_baner_right_img_sect">
-                <div className="rsc_v1_baner_right_img">
-                  <video id="myVideo" autoPlay={true} muted loop style={{borderRadius:"25%"}}>
-                    <source src={vid} type="video/mp4" />
-                  Your browser does not support the video tag.
-                  </video>
-                </div>
+            <div className="rsc_v1_baner_right" style={{display: "flex-row", alignItems: "center", justifyContent: "center", width:"100%"}}> 
+              <div style={{width:"100%", display: "flex", alignItems: "center", justifyContent: "center", width:"100%"}}>
+                <h6 style={{ margin:"auto", marginBottom: "1.5em"}}> Hey Soldier! Still not part of the Club ?</h6>
               </div>
+              <div style={{width:"100%", display: "flex", alignItems: "center", justifyContent: "center", width:"100%", cursor:"pointer"}}>
+                  <video id="myVideo" autoPlay={true} muted loop style={{borderRadius:"25%", margin:"auto", justifyContent: "center", border:" 5px solid red"}}>
+                    <source src={vid} type="video/mp4" />
+                  Your browser does not support this video.
+                  </video>
+              </div>
+              <div style={{width:"100%", display: "flex", alignItems: "center", justifyContent: "center", width:"100%", marginTop:"3em"}}>
+                <h3 style={{textAlign:"center", paddingLeft: "2em", paddingRight: "2em"}}>First event will start soon, check the roadmap and stay tunned to socials!</h3>
+              </div>
+
             </div>
           </div>
         </div>

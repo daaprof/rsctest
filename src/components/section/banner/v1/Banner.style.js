@@ -133,6 +133,9 @@ const BannerV1Wrapper = styled.section`
 
       .rsc_v1_baner_right_img {
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         z-index: 1;
       }
     }
