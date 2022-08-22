@@ -40,9 +40,6 @@ const MobileMenu = ({ mobileMenuhandle }) => {
         <div className="rsc_mobile_menu_list">
           <ul>
             <li className="mobile_menu_hide">
-              <a href="#home">{t('nav.home')}</a>
-            </li>
-            <li className="mobile_menu_hide">
               <a href="#about">About</a>
             </li>
             <li className="mobile_menu_hide">

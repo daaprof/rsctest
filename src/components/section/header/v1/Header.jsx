@@ -93,7 +93,7 @@ const Header = () => {
         <div className="rsc_menu_sect">
           <div className="rsc_menu_left_sect">
             <div className="logo">
-              <a href="/">
+              <a href="#home">
                 <img src={ logo} alt="rsc nft logo" />
               </a>
             </div>
@@ -102,13 +102,13 @@ const Header = () => {
             <div className="rsc_menu_list">
               <ul>
                 <li>
-                  <a href="#home">{t('nav.home')}</a>
-                </li>
-                <li>
                   <a href="#about">{t('nav.about')}</a>
                 </li>
                 <li>
                   <a href="#roadmap">{t('nav.roadmap')}</a>
+                </li>
+                <li>
+                  <a href="#whitepaper">Whitepaper</a>
                 </li>
                 <li>
                   <a href="#team">{t('nav.team')}</a>

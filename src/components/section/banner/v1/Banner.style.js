@@ -197,7 +197,13 @@ const BannerV1Wrapper = styled.section`
       padding-right: 0px;
 
       .rsc_v1_baner_right_img_sect {
-        height: 480px;
+        height: 200px;
+        width: 180px;
+        
+
+        #myVideo {
+          margin-bottom:40px;
+        }
       }
     }
   }
@@ -229,7 +235,7 @@ const BannerV1Wrapper = styled.section`
     }
 
     .rsc_v1_baner_right {
-      padding-left: 34px;
+      padding-left: 0px;
 
       .mint_live_circle_sect{
         height: 90px;

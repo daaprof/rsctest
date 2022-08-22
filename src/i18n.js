@@ -20,7 +20,6 @@ i18n
       en: {
         translation: {
             nav: {
-                home: 'Home',
                 about: 'About',
                 roadmap: 'Roadmap',
                 team: 'Team',
@@ -34,7 +33,6 @@ i18n
       es: {
         translation: {
             nav: {
-                home: 'Inicio',
                 about: '¿Qué es RSC?',
                 roadmap: 'Hoja de Ruta',
                 team: 'Equipo',

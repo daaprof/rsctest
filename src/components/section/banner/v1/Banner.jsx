@@ -9,6 +9,7 @@ import homeInfo from "../../../../assets/data/bannerV1.json";
 import {COLLECTION_ADDRESS, COLLECTION_ABI} from '../../../../contracts/Collection';
 import {useAccount, useConnect, useNetwork , useFeeData, useBalance, useContractRead, useContractWrite, useWaitForTransaction, usePrepareContractWrite } from 'wagmi';
 import $ from 'jquery';
+import vid from '../../../../assets/gif.mp4';
 
 function openWhitelistModal(){
   
@@ -68,15 +69,14 @@ const Banner = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-6">
+          <div className="col-lg-6" style={{padding:"0px"}}>
             <div className="rsc_v1_baner_right">
               <div className="rsc_v1_baner_right_img_sect">
-
-                <div className="rsc_v1_baner_right_img_bg">
-                  <img src={homeImageBG} alt="" />
-                </div>
                 <div className="rsc_v1_baner_right_img">
-                  <img src={characterThumb} alt="avater" />
+                  <video id="myVideo" autoPlay={true} muted loop style={{borderRadius:"25%"}}>
+                    <source src={vid} type="video/mp4" />
+                  Your browser does not support the video tag.
+                  </video>
                 </div>
               </div>
             </div>
