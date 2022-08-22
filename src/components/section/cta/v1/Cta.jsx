@@ -14,6 +14,12 @@ import particleShape7 from "../../../../assets/images/icon/star_7.svg";
 
 import CTAStyleWrapper from "./Cta.style";
 import toast from "react-hot-toast";
+import $ from 'jquery';
+function openWhitelistModal(){
+  
+  $('#whitelistModal').css('visibility','visible')
+  
+}
 
 const CTA = () => {
   const particleShapes = [
@@ -35,10 +41,10 @@ const CTA = () => {
         <div className="title-emo">🤙</div>
         <div className="rsc_v1_cta_content">
           <div className="join_comunity_btns">
-            <Button lg variant="mint" className="wishlist_btn" onClick={() => toast("Proof Alert!")}>
+            <Button lg variant="mint" className="wishlist_btn" onClick={() => openWhitelistModal()} style={{borderRadius: "15%"}}>
               Whitelist Now
             </Button>
-            <Button lg variant="blue" className="join_discord_btn" onClick={() => window.open('https://discord.gg/BC3SdW3cfG', 'blank')}>
+            <Button lg variant="blue" className="join_discord_btn" onClick={() => window.open('https://discord.gg/BC3SdW3cfG', 'blank')} style={{borderRadius: "15%"}}>
               {""}
               <FaDiscord /> Join Discord
             </Button>
