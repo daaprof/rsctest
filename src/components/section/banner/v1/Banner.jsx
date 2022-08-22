@@ -75,8 +75,8 @@ const Banner = () => {
           </div>
           <div className="col-lg-6" style={{padding:"0px"}}>
             <div className="rsc_v1_baner_right" style={{display: "flex-row", alignItems: "center", justifyContent: "center", width:"100%"}}> 
-              <div style={{width:"100%", display: "flex", alignItems: "center", justifyContent: "center", width:"100%"}}>
-                <h6 style={{ margin:"auto", marginBottom: "1.5em"}}> Hey Soldier! Still not part of the Club ?</h6>
+              <div style={{width:"100%", display: "flex", alignItems: "center", justifyContent: "center", width:"100%", textAlign:"center"}}>
+                <h4 style={{ margin:"auto", marginBottom: "0.75em"}}> Hey Soldier! <br></br> Still not part of the Club ?</h4>
               </div>
               <div style={{width:"100%", display: "flex", alignItems: "center", justifyContent: "center", width:"100%", cursor:"pointer"}}>
                   <video id="myVideo" autoPlay={true} muted loop style={{borderRadius:"25%", margin:"auto", justifyContent: "center", border:" 5px solid red"}}>
@@ -84,7 +84,7 @@ const Banner = () => {
                   Your browser does not support this video.
                   </video>
               </div>
-              <div style={{width:"100%", display: "flex", alignItems: "center", justifyContent: "center", width:"100%", marginTop:"3em"}}>
+              <div style={{width:"100%", display: "flex", alignItems: "center", justifyContent: "center", width:"100%", marginTop:"1em"}}>
                 <h3 style={{textAlign:"center", paddingLeft: "2em", paddingRight: "2em"}}>First event will start soon, check the roadmap and stay tunned to socials!</h3>
               </div>
 
