@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Routes, Route } from "react-router-dom";
 import HomeV1 from "../pages/homeV1";
 import '@rainbow-me/rainbowkit/styles.css';
@@ -18,6 +19,9 @@ import { publicProvider } from 'wagmi/providers/public';
 import { connectorsForWallets, wallet, darkTheme, lightTheme, midnightTheme } from '@rainbow-me/rainbowkit';
 
 import { Toaster } from 'react-hot-toast';
+
+
+
 var toastStlye = {
   border: '1px solid #0058AA',
   padding: '16px',
@@ -62,6 +66,7 @@ const wagmiClient = createClient({
 })
  
 function App() {
+
   return (
     <WagmiConfig client={wagmiClient}>
       <RainbowKitProvider chains={chains} coolMode showRecentTransactions={true} 
@@ -79,6 +84,7 @@ function App() {
                     error: { duration: 6000 }
                   }}
       />
+      
       <Routes>
         <Route path="/" element={<HomeV1 />} exact />
       </Routes>

@@ -5,6 +5,8 @@ import ContextProvider from "./utils/ContextProvider"
 import App from "./app/App"
 
 import { Buffer } from 'buffer';
+import './i18n';
+
 window.Buffer = window.Buffer || Buffer;
 
 const root = ReactDOM.createRoot(document.getElementById("root"))

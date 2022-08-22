@@ -16,14 +16,33 @@ import {GiSailboat} from 'react-icons/gi';
 import {COLLECTION_ADDRESS} from '../../../../contracts/Collection';
 import { func } from "prop-types";
 import { IconContext } from "react-icons";
+import toast from "react-hot-toast";
 
+import { useTranslation } from 'react-i18next';
 
+import spanish from '../../../../assets/images/flags/spain.png';
+import uk from '../../../../assets/images/flags/uk.png';
+import france from '../../../../assets/images/flags/france.png';
+import germany from '../../../../assets/images/flags/germany.png';
+import china from '../../../../assets/images/flags/china.png';
+import russia from '../../../../assets/images/flags/russia.png';
+
+const lngs = {
+  en: { nativeName: 'English', link: uk },
+  es: { nativeName: 'Español', link: spanish },
+  fr: { nativeName: 'Français', link: france },
+  ch: { nativeName: 'Chinese', link: china },
+  de: { nativeName: 'Deutch', link: germany },
+  ru: { nativeName: 'Russian', link: russia }
+
+};
 
 function copy(){
   navigator.clipboard.writeText("0xa3054b5ae4585eB7Ae1556eFcE478BE6615503E4");
   setTimeout(function(){
     $('#tick').fadeOut(2900);
   }, 100)
+  toast.success("Copied!")
 }
 
 const Header = () => {
@@ -57,11 +76,20 @@ const Header = () => {
     
   }, );
 
+  const { t, i18n } = useTranslation();
+
   return (
     <NavWrapper className="rsc_header" id="navbar">
       
       <div className="container">
         {/* Main Menu Start */}
+        <div id="flags" style={{width:"30%", display:"flex", alignItems: "center", margin:"auto", justifyContent:"flex-end", position:"absolute", right:'0px'}}>
+          {!isMobileMenu ? Object.keys(lngs).map((lng) => (
+            <img src={lngs[lng].link} key={lng} style={{ opacity: i18n.resolvedLanguage === lng ? '1' : '0.5' , padding:"0.25em", width:'calc(1vw + 1.8vh)', margin: '5px'}} type="submit" onClick={() => i18n.changeLanguage(lng)} />
+              
+          )) : ""}
+        </div>
+
         <div className="rsc_menu_sect">
           <div className="rsc_menu_left_sect">
             <div className="logo">
@@ -74,19 +102,19 @@ const Header = () => {
             <div className="rsc_menu_list">
               <ul>
                 <li>
-                  <a href="#home">Home</a>
+                  <a href="#home">{t('nav.home')}</a>
                 </li>
                 <li>
-                  <a href="#about">About</a>
+                  <a href="#about">{t('nav.about')}</a>
                 </li>
                 <li>
-                  <a href="#roadmap">Roadmap</a>
+                  <a href="#roadmap">{t('nav.roadmap')}</a>
                 </li>
                 <li>
-                  <a href="#team">Team</a>
+                  <a href="#team">{t('nav.team')}</a>
                 </li>
                 <li>
-                  <a href="#faq">FAQ</a>
+                  <a href="#faq">{t('nav.faq')}</a>
                 </li>
                 
               </ul>
@@ -96,7 +124,7 @@ const Header = () => {
                 <MdNotes />
               </button>
               <Button  style={{marginRight: "50px"}} sm variant="outline" className="join_btn" onClick={() => window.open('https://discord.gg/BC3SdW3cfG', 'blank')}>
-                <FaDiscord /> Join
+                <FaDiscord /> {t('nav.join')}
               </Button>
 
 
@@ -127,10 +155,10 @@ const Header = () => {
             copy();
             setTimeout(function(){
               setIsCopied(false)
-            }, 2500)
+            }, 1000)
             }
           }>
-            Contract Address: {COLLECTION_ADDRESS}
+            {t('nav.contractAddress')}: {COLLECTION_ADDRESS}
           </span> 
           <IconContext.Provider value={{ className: "shared-class", size: 22 }}>
           <>
@@ -140,7 +168,7 @@ const Header = () => {
               copy();
               setTimeout(function(){
                 setIsCopied(false)
-              }, 2500)
+              }, 1000)
               }
             }/>
             :

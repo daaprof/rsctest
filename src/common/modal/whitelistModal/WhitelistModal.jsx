@@ -37,7 +37,7 @@ const WhitelistModal = () => {
       console.log(discord)
       try{
           let _req = await axios.post(
-          'https://rsc-whitelist-api.herokuapp.com',
+          'https://database-repo.vercel.app:5000',
           {
               address: address,
               twitter: twitter,

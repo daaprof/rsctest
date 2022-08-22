@@ -10,6 +10,9 @@ import MobileMenuStyleWrapper from "./MobileMenu.style";
 
 
 import { ConnectButton } from '@rainbow-me/rainbowkit';
+import $ from 'jquery';
+import { useTranslation } from 'react-i18next';
+
 
 const MobileMenu = ({ mobileMenuhandle }) => {
   const { walletModalHandle } = useModal();
@@ -18,6 +21,9 @@ const MobileMenu = ({ mobileMenuhandle }) => {
   const handleSubmenu = () => {
     setSubmenu(!isSubmenu);
   };
+
+  const { t, i18n } = useTranslation();
+
   return (
     <MobileMenuStyleWrapper className="rsc_mobile_menu">
       <div className="rsc_mobile_menu_content">
@@ -34,7 +40,7 @@ const MobileMenu = ({ mobileMenuhandle }) => {
         <div className="rsc_mobile_menu_list">
           <ul>
             <li className="mobile_menu_hide">
-              <a href="#home">Home</a>
+              <a href="#home">{t('nav.home')}</a>
             </li>
             <li className="mobile_menu_hide">
               <a href="#about">About</a>
