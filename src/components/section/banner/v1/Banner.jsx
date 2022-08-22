@@ -14,6 +14,7 @@ import vid from '../../../../assets/gif.mp4';
 function openWhitelistModal(){
   
   $('#whitelistModal').css('visibility','visible')
+  
 }
 
 const Banner = () => {

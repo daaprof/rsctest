@@ -62,6 +62,14 @@ const Header = () => {
       }
     });
 
+      setTimeout(() => {
+        let var33 = $('#langSelector').offset()
+        $('#flags').offset({'left': var33.left})
+        $('#flags').offset({'top': var33.top + 45})
+            
+      }, 500);
+  
+
     return () => { 
       window.removeEventListener("sticky", handleScroll);
     };
@@ -75,20 +83,24 @@ const Header = () => {
     }
     
   }, );
+  
 
-  const { t, i18n } = useTranslation();
+ const { t, i18n } = useTranslation();
+
+
+ function toggleFlags(){
+    $('#flags').fadeToggle()
+  }
+  function hideFlags(){
+    $('#flags').css('display','none')
+  }
 
   return (
     <NavWrapper className="rsc_header" id="navbar">
       
       <div className="container">
         {/* Main Menu Start */}
-        <div id="flags" style={{width:"30%", display:"flex", alignItems: "center", margin:"auto", justifyContent:"flex-end", position:"absolute", right:'0px'}}>
-          {!isMobileMenu ? Object.keys(lngs).map((lng) => (
-            <img src={lngs[lng].link} key={lng} style={{ opacity: i18n.resolvedLanguage === lng ? '1' : '0.5' , padding:"0.25em", width:'calc(1vw + 1.8vh)', margin: '5px'}} type="submit" onClick={() => i18n.changeLanguage(lng)} />
-              
-          )) : ""}
-        </div>
+        
 
         <div className="rsc_menu_sect">
           <div className="rsc_menu_left_sect">
@@ -97,7 +109,20 @@ const Header = () => {
                 <img src={ logo} alt="rsc nft logo" />
               </a>
             </div>
+            <img id="langSelector" src={lngs[i18n.resolvedLanguage].link} style={{  padding:"0.25em", width:'calc(1.2vw + 2.5vh)', margin: '5px',  zIndex:"5"}} type="submit" onClick={() => toggleFlags()} />
+              
+        <div id="flags" style={{width:"calc(1.2vw + 2.5vh)", height:"auto", display:"none", margin:"auto", justifyContent:"center", position:"absolute",
+                                background: "rgba(13, 27, 38, 0.7)", zIndex:"5"}} >
+          {!isMobileMenu ? Object.keys(lngs).map((lng) => (
+            <img src={lngs[lng].link} key={lng} style={{ opacity: i18n.resolvedLanguage === lng ? '1' : '0.5' , padding:"0.25em", width:'auto', margin: 'auto',
+            paddingTop: lng === "en" ? "1em" : "0.25em", paddingBottom: lng === "ru" ? "1em" : "0.25em"}} type="submit"
+             onClick={() => {i18n.changeLanguage(lng); toggleFlags(); 
+              toast.success("Succesfully changed language to "+lngs[lng].nativeName, {duration: 2000} )   }} title={lngs[lng].nativeName}/>
+              
+          )) : ""}
           </div>
+          
+        </div>
           <div className="rsc_menu_right_sect rsc_v1_menu_right_sect">
             <div className="rsc_menu_list">
               <ul>

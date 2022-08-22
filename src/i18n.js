@@ -41,8 +41,35 @@ i18n
                 contractAddress: 'Dirección del contrato',
               }
         }
+      },
+      fr : {
+        translation: {
+          nav: {
+              about: 'Allez Allez',
+            }
+      }
+      },
+      ch: {
+        translation: {
+          nav: {
+              about: '01001111010010101001',
+            }
+      }
+      },
+      de: {
+        translation: {
+          nav: {
+              about: 'Aaslkdjasais',
+            }
+      }
+      },
+      ru: {
+        translation: {
+          nav: {
+              about: 'Apolonski',
+            }
+      }
       }
     }
   });
-
 export default i18n;
