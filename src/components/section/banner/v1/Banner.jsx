@@ -17,6 +17,8 @@ function openWhitelistModal(){
   
 }
 
+
+
 const Banner = () => {
   const { mintModalHandle } = useModal();
   const {address} = useAccount();
@@ -40,6 +42,8 @@ const Banner = () => {
   let _text = ""
   if (_white && supply < 300) _text = "You are whitelisted, welcome to RSC!"
   
+  
+
   return (<>
     <BannerV1Wrapper id="home">
       <div className="container">
@@ -76,7 +80,7 @@ const Banner = () => {
           <div className="col-lg-6" style={{padding:"0px"}}>
             <div className="rsc_v1_baner_right" style={{display: "flex-row", alignItems: "center", justifyContent: "center", width:"100%"}}> 
               <div style={{width:"100%", display: "flex", alignItems: "center", justifyContent: "center", width:"100%", textAlign:"center"}}>
-                <h4 style={{ margin:"auto", marginBottom: "0.75em"}}> Hey Soldier! <br></br> Still not part of the Club ?</h4>
+                <h4 style={{ margin:"auto", marginBottom: "0.75em", fontFamily: "Bakbak One"}}> Hey Soldier! <br></br> Still not part of the Club?<br></br>Don't miss the opportunity!</h4>
               </div>
               <div style={{width:"100%", display: "flex", alignItems: "center", justifyContent: "center", width:"100%", cursor:"pointer"}}>
                   <video id="myVideo" autoPlay={true} muted loop style={{borderRadius:"25%", margin:"auto", justifyContent: "center", border:" 5px solid red"}}>
@@ -85,13 +89,16 @@ const Banner = () => {
                   </video>
               </div>
               <div style={{width:"100%", display: "flex", alignItems: "center", justifyContent: "center", width:"100%", marginTop:"1em"}}>
-                <h3 style={{textAlign:"center", paddingLeft: "2em", paddingRight: "2em"}}>First event will start soon, check the roadmap and stay tunned to socials!</h3>
+                <h3 style={{textAlign:"center", paddingLeft: "2em", paddingRight: "2em", fontFamily: "Bakbak One"}}>First event will start soon, check the roadmap and stay tunned to socials!</h3>
               </div>
 
             </div>
           </div>
         </div>
       </div>
+
+      
+
     </BannerV1Wrapper>
     </>);
 };

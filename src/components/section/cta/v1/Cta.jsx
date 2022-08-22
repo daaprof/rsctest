@@ -15,13 +15,26 @@ import particleShape7 from "../../../../assets/images/icon/star_7.svg";
 import CTAStyleWrapper from "./Cta.style";
 import toast from "react-hot-toast";
 import $ from 'jquery';
+import france from '../../../../assets/images/flags/france.png';
+
 function openWhitelistModal(){
   
   $('#whitelistModal').css('visibility','visible')
   
 }
 
+async function showTweets(){
+  $('#tweets').css('display','block')
+}
+
+
 const CTA = () => {
+  var tag = document.createElement('script');
+  tag.async = true;
+  tag.src = 'https://platform.twitter.com/widgets.js';
+  var body = document.getElementsByTagName('body')[0];
+  body.appendChild(tag);
+
   const particleShapes = [
     particleShape6,
     particleShape3,
@@ -33,10 +46,12 @@ const CTA = () => {
   ];
   return (
     <CTAStyleWrapper>
-      <div className="container">
-        <SectionTitle
+      <div className="container" >
+        <SectionTitle  isCenter={true}
           className="rsc_title_section text-center"
-          title="Join Our community &amp; get Early access"
+          title="Join Our Community"
+          subtitle="Get Early Access"
+          style={{paddingTop:"4em"}}
         ></SectionTitle>
         <div className="title-emo">🤙</div>
         <div className="rsc_v1_cta_content">
@@ -49,16 +64,16 @@ const CTA = () => {
               <FaDiscord /> Join Discord
             </Button>
           </div>
-          <div className="cta_social_links">
+          <div className="cta_social_links" style={{marginBottom:"0px"}}>
             <ul>
               {data?.map((item, i) => (
                 <li key={i}>
-                  <a href={item.url} target="blank">
+                  <a href={item.url} target="blank" onClick={ i == 1? () => showTweets() : ""}>
                     {item.thumb ? (
                       <img src={item.thumb} alt="rsc nft profiles" />
                     ) : (
                       item.icon
-                    )}
+                    )} 
                   </a>
                   <img
                     className="social_hover_shape"
@@ -68,6 +83,10 @@ const CTA = () => {
                 </li>
               ))}
             </ul>
+          </div>
+          
+          <div id="tweets" style={{width:"70%", height:"300px", alignItems: "center", margin:"auto",  overflow:"hidden", marginTop:"2em", marginBottom:"2em"}}>
+            <a style={{margin:"auto", textAlign:"center"}} className="twitter-timeline" href="https://twitter.com/ReconSoldierNFT?ref_src=twsrc%5Etfw">Tweets by RSC</a> 
           </div>
     
           <div className="footer_stras_sect">

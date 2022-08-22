@@ -15,6 +15,8 @@ import MintNowModal from "../common/modal/mintNowModal";
 import WhitelistModal from "../common/modal/whitelistModal";
 import WalletModal from "../common/modal/walletModal/WalletModal";
 
+
+
 import $ from 'jquery';
 $('#root').on('click', function(e){
   if($('#flags').find(e.target).length == 0 && $('#langSelector').find(e.target).length == 0){
@@ -23,9 +25,11 @@ $('#root').on('click', function(e){
   
 });
 
-
 const HomeV1 = () => {
   const { visibility } = useModal();
+
+  
+
   return (
     <Layout>
        <GlobalStyles /> 
@@ -42,6 +46,8 @@ const HomeV1 = () => {
       <Team />
       <FAQ />
       <Footer />
+      
+      
     </Layout>
   );
 };
