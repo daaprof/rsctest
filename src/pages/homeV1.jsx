@@ -14,6 +14,16 @@ import Footer from "../components/section/footer/v1";
 import MintNowModal from "../common/modal/mintNowModal";
 import WhitelistModal from "../common/modal/whitelistModal";
 import WalletModal from "../common/modal/walletModal/WalletModal";
+
+import $ from 'jquery';
+$('#root').on('click', function(e){
+  if($('#flags').find(e.target).length == 0 && $('#langSelector').find(e.target).length == 0){
+    document.getElementById('flags').style.display = 'none'
+  }
+  
+});
+
+
 const HomeV1 = () => {
   const { visibility } = useModal();
   return (

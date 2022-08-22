@@ -94,6 +94,7 @@ const Header = () => {
   function hideFlags(){
     $('#flags').css('display','none')
   }
+  
 
   return (
     <NavWrapper className="rsc_header" id="navbar">
