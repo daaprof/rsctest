@@ -89,9 +89,8 @@ const Banner = () => {
                   </video>
               </div>
               <div style={{width:"100%", display: "flex", alignItems: "center", justifyContent: "center", width:"100%", marginTop:"1em"}}>
-                <h3 style={{textAlign:"center", paddingLeft: "2em", paddingRight: "2em", fontFamily: "Bakbak One"}}>First event will start soon, check the roadmap and stay tunned to socials!</h3>
+                <h3 style={{textAlign:"center", paddingLeft: "2em", paddingRight: "2em", fontFamily: "Bakbak One"}}>First event will start soon, check the roadmap and stay tuned to our socials!</h3>
               </div>
-
             </div>
           </div>
         </div>
