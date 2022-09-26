@@ -3,7 +3,7 @@ import aboutCardIcon2 from "../../images/icon/aboutus_card_icon2.png"
 import aboutCardIcon3 from "../../images/icon/aboutus_card_icon3.png"
 
  const data = {
-    aboutDescription1: 'RSC is a unique collection of 3,000 DoodleSoldier NFTs that are deployed on the Ethereum blockchain. Recon Soldiers Club is the first project to succesfully bring DoodleSoldiers with real value to the Ethereum NFT community',
+    aboutDescription1: 'RSC is a unique collection of 3,000 DoodleSoldier NFTs that are deployed on the Ethereum blockchain. Recon Soldiers Club is the first project to succesfully bring DoodleSoldiers with real value to the Ethereum NFT community.',
     aboutDescription2: 'Our team got bored of the NFT market solely being used to trade useless pictures, which is why our collection of DoodleSoldiers brings a whole new dimension to the NFT market: Buy and hold our NFTs to be entered into our weekly giveaways for a chance of winning paid trips, ETH, gain exclusive access to our parties and many more amazing utilities! We will be releasing more information soon👀',
     aboutInfo: [
         {
